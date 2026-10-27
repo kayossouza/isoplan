@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 (2026-10-27)
+
+First version on npm. Same code as 0.1.0, which is stuck in npm's staged publishing and was never released.
+
 ## 0.1.0 (2026-10-27)
 
 First release, extracted from kinho.dev.

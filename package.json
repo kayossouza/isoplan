@@ -1,6 +1,6 @@
 {
   "name": "isoplan",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Render any system architecture as an isometric floor plan, with animated flows along every link. React component plus a framework-free SVG core.",
   "keywords": [
     "architecture",
