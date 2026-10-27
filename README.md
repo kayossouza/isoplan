@@ -1,5 +1,7 @@
 # isoplan
 
+![isoplan](docs/cover.jpg)
+
 Render any system architecture as an isometric floor plan, with animated flows along every link.
 
 **Try it:** [isoplan.kinho.dev](https://isoplan.kinho.dev), paste your graph and copy the SVG.
