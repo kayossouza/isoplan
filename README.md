@@ -4,6 +4,8 @@ Render any system architecture as an isometric floor plan, with animated flows a
 
 **Try it:** [isoplan.kinho.dev](https://isoplan.kinho.dev), paste your graph and copy the SVG.
 
+If isoplan is useful to you, [give it a ⭐](https://github.com/kayossouza/isoplan): it helps other people find it.
+
 ![isoplan rendering a SaaS architecture](docs/screenshot.png)
 
 You describe zones, nodes and edges as plain data. isoplan lays them out as stacked slabs, puts an isometric building on each node by its kind, routes right-angle floor tracks between pieces and animates the path each thing travels. Hover or focus a piece and it lights up with its tracks, its flows and the pieces it talks to.

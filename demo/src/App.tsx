@@ -58,7 +58,7 @@ export function App() {
                 </h1>
                 <p>Any system architecture as an isometric floor plan, with the path each thing travels.</p>
                 <nav>
-                    <a href="https://github.com/kayossouza/isoplan">GitHub</a>
+                    <a href="https://github.com/kayossouza/isoplan">★ Star on GitHub</a>
                     <a href="https://www.npmjs.com/package/isoplan">npm</a>
                 </nav>
             </header>
