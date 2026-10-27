@@ -1,0 +1,249 @@
+/* isoplan: every color is a --iso-* variable. Override them on .isoplan. */
+
+.isoplan,
+.isoplan[data-theme='neon'] {
+  --iso-font: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+  --iso-bg: #070b0c;
+  --iso-bg-grid: rgba(0, 240, 255, 0.035);
+  --iso-border: #1f2937;
+  --iso-text: #e5e7eb;
+  --iso-text-strong: #ffffff;
+  --iso-muted: #6b7280;
+  --iso-dim: #9ca3af;
+  --iso-accent: #00f0ff;
+
+  --iso-stroke: #7defff;
+  --iso-top: #1d3236;
+  --iso-left: #122124;
+  --iso-right: #0b1517;
+  --iso-ext-stroke: #a1a1aa;
+  --iso-ext-top: #26262b;
+  --iso-ext-left: #1a1a1e;
+  --iso-ext-right: #121215;
+  --iso-window: rgba(0, 240, 255, 0.28);
+
+  --iso-slab: #0c1517;
+  --iso-slab-top: rgba(0, 240, 255, 0.04);
+  --iso-slab-stroke: rgba(0, 240, 255, 0.45);
+  --iso-grid: #00f0ff;
+  --iso-zone: #b026ff;
+  --iso-zone-fill: rgba(176, 38, 255, 0.06);
+  --iso-zone-text: #c084fc;
+  --iso-area-text: #ffffff;
+
+  --iso-track: #00f0ff;
+  --iso-flow: #00f0ff;
+  --iso-label: #e5e7eb;
+  --iso-num: #00f0ff;
+  --iso-halo: #070b0c;
+
+  --iso-on-top: #00f0ff;
+  --iso-on-left: #00a9b4;
+  --iso-on-right: #007a82;
+  --iso-linked-top: #2c5a60;
+  --iso-label-on: #00f0ff;
+
+  --iso-min-width: 760px;
+}
+
+.isoplan[data-theme='light'] {
+  --iso-bg: #f7fafb;
+  --iso-bg-grid: rgba(8, 145, 178, 0.06);
+  --iso-border: #d4dde2;
+  --iso-text: #1f2937;
+  --iso-text-strong: #0f172a;
+  --iso-muted: #64748b;
+  --iso-dim: #475569;
+  --iso-accent: #0e7490;
+
+  --iso-stroke: #0e7490;
+  --iso-top: #e3f4f8;
+  --iso-left: #c7e6ee;
+  --iso-right: #a9d6e1;
+  --iso-ext-stroke: #71717a;
+  --iso-ext-top: #f4f4f5;
+  --iso-ext-left: #e4e4e7;
+  --iso-ext-right: #d4d4d8;
+  --iso-window: rgba(8, 145, 178, 0.3);
+
+  --iso-slab: #dfe9ec;
+  --iso-slab-top: rgba(255, 255, 255, 0.7);
+  --iso-slab-stroke: rgba(14, 116, 144, 0.45);
+  --iso-grid: #0e7490;
+  --iso-zone: #7e22ce;
+  --iso-zone-fill: rgba(126, 34, 206, 0.05);
+  --iso-zone-text: #7e22ce;
+  --iso-area-text: #0f172a;
+
+  --iso-track: #0e7490;
+  --iso-flow: #0891b2;
+  --iso-label: #1f2937;
+  --iso-num: #0e7490;
+  --iso-halo: #f7fafb;
+
+  --iso-on-top: #22d3ee;
+  --iso-on-left: #06b6d4;
+  --iso-on-right: #0891b2;
+  --iso-linked-top: #a5f3fc;
+  --iso-label-on: #0e7490;
+}
+
+/* ---------- frame ---------- */
+
+.isoplan {
+  box-sizing: border-box;
+  color: var(--iso-text);
+  font-family: var(--iso-font);
+  border: 1px solid var(--iso-border);
+  background:
+    linear-gradient(var(--iso-bg-grid) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, var(--iso-bg-grid) 1px, transparent 1px) 0 0 / 24px 24px,
+    var(--iso-bg);
+}
+.isoplan.is-full {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  --iso-min-width: 1100px;
+}
+.isoplan .iso-bar {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--iso-border);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.isoplan .iso-info {
+  flex: 1;
+}
+.isoplan .iso-info-num {
+  color: var(--iso-accent);
+}
+.isoplan .iso-info-name {
+  color: var(--iso-text-strong);
+}
+.isoplan .iso-info-sub,
+.isoplan .iso-info-hint {
+  color: var(--iso-muted);
+}
+.isoplan .iso-info-links {
+  color: var(--iso-dim);
+}
+.isoplan .iso-toggle {
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--iso-accent);
+  font: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+.isoplan .iso-toggle:hover,
+.isoplan .iso-toggle:focus-visible {
+  color: var(--iso-text-strong);
+}
+.isoplan .iso-viewport {
+  overflow-x: auto;
+}
+.isoplan.is-full .iso-viewport {
+  flex: 1;
+  overflow: auto;
+}
+.isoplan .iso-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid var(--iso-border);
+  font-size: 11px;
+  color: var(--iso-muted);
+}
+.isoplan .iso-stats b {
+  color: var(--iso-text-strong);
+}
+
+/* ---------- drawing ---------- */
+
+.iso-scene svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: var(--iso-min-width, 760px);
+  font-family: var(--iso-font);
+}
+svg.iso-scene {
+  font-family: var(--iso-font);
+}
+.iso-scene .iso-face { stroke: var(--iso-stroke); stroke-opacity: 0.7; stroke-width: 1.1; stroke-linejoin: round; transition: fill 0.2s, stroke-opacity 0.2s; }
+.iso-scene .iso-top { fill: var(--iso-top); }
+.iso-scene .iso-left { fill: var(--iso-left); }
+.iso-scene .iso-right { fill: var(--iso-right); }
+.iso-scene .iso-ext .iso-top { fill: var(--iso-ext-top); }
+.iso-scene .iso-ext .iso-left { fill: var(--iso-ext-left); }
+.iso-scene .iso-ext .iso-right { fill: var(--iso-ext-right); }
+.iso-scene .iso-ext .iso-face { stroke: var(--iso-ext-stroke); }
+.iso-scene .iso-window { fill: var(--iso-window); stroke: var(--iso-stroke); stroke-opacity: 0.6; stroke-width: 0.6; }
+.iso-scene .iso-deco { fill: none; stroke: var(--iso-stroke); stroke-opacity: 0.8; stroke-width: 0.9; }
+.iso-scene .iso-slab-side { fill: var(--iso-slab); stroke: var(--iso-slab-stroke); stroke-width: 1; }
+.iso-scene .iso-slab-top { fill: var(--iso-slab-top); stroke: var(--iso-slab-stroke); stroke-width: 1; }
+.iso-scene .iso-grid { stroke: var(--iso-grid); stroke-opacity: 0.07; stroke-width: 0.7; }
+.iso-scene .iso-block { fill: var(--iso-zone-fill); stroke: var(--iso-zone); stroke-opacity: 0.6; stroke-width: 0.9; stroke-dasharray: 5 3; }
+.iso-scene .iso-block-name { font-size: 11px; fill: var(--iso-zone-text); letter-spacing: 0.08em; text-transform: uppercase; }
+.iso-scene .iso-area-name { font-size: 19px; font-weight: 700; fill: var(--iso-area-text); }
+.iso-scene .iso-track { fill: none; stroke: var(--iso-track); stroke-opacity: 0.28; stroke-width: 1.2; stroke-linejoin: round; transition: stroke-opacity 0.2s; }
+.iso-scene .iso-label { font-size: 16px; font-weight: 700; fill: var(--iso-label); cursor: pointer; }
+.iso-scene .iso-label .iso-num { fill: var(--iso-num); }
+.iso-scene .iso-label,
+.iso-scene .iso-area-name,
+.iso-scene .iso-block-name { paint-order: stroke; stroke: var(--iso-halo); stroke-width: 4px; stroke-linejoin: round; }
+.iso-scene .iso-piece { cursor: pointer; outline: none; }
+.iso-scene .iso-piece:focus-visible .iso-face { stroke: var(--iso-accent); stroke-opacity: 1; stroke-width: 2; }
+
+/* Flows: dashes travel along each track from "from" to "to". The dash period
+   (4 + 16) matches the keyframe offset and the period used to compute speed. */
+.iso-scene .iso-flow {
+  fill: none;
+  stroke: var(--iso-flow);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 4 16;
+  opacity: 0.7;
+  animation: iso-flow var(--iso-flow-duration, 0.42s) linear infinite;
+  transition: opacity 0.2s;
+}
+@keyframes iso-flow {
+  from { stroke-dashoffset: 20; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Highlight */
+.iso-scene[data-on] .iso-piece .iso-face { stroke-opacity: 0.25; }
+.iso-scene[data-on] .iso-track { stroke-opacity: 0.07; }
+.iso-scene[data-on] .iso-flow { opacity: 0.1; }
+.iso-scene[data-on] .iso-label { opacity: 0.45; }
+.iso-scene .iso-track.is-on { stroke-opacity: 1; stroke-width: 2.2; }
+.iso-scene .iso-flow.is-on { opacity: 1; stroke-width: 3; }
+.iso-scene .iso-piece.is-on .iso-face,
+.iso-scene .iso-piece.is-linked .iso-face { stroke-opacity: 1; }
+.iso-scene .iso-piece.is-on .iso-top { fill: var(--iso-on-top); }
+.iso-scene .iso-piece.is-on .iso-left { fill: var(--iso-on-left); }
+.iso-scene .iso-piece.is-on .iso-right { fill: var(--iso-on-right); }
+.iso-scene .iso-piece.is-linked .iso-top { fill: var(--iso-linked-top); }
+.iso-scene .iso-label.is-on,
+.iso-scene .iso-label.is-linked { opacity: 1; }
+.iso-scene .iso-label.is-on { fill: var(--iso-label-on); }
+
+@media (prefers-reduced-motion: reduce) {
+  .iso-scene .iso-flow { animation: none; }
+  .iso-scene .iso-face,
+  .iso-scene .iso-track,
+  .iso-scene .iso-flow { transition: none; }
+}
