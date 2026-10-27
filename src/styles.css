@@ -1,7 +1,8 @@
 /* isoplan: every color is a --iso-* variable. Override them on .isoplan. */
 
-.isoplan,
-.isoplan[data-theme='neon'] {
+/* Themes sit at the specificity of a single class, so a plain .isoplan rule
+   loaded after this file overrides them. */
+.isoplan {
   --iso-font: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   --iso-bg: #070b0c;
   --iso-bg-grid: rgba(0, 240, 255, 0.035);
@@ -46,7 +47,7 @@
   --iso-min-width: 760px;
 }
 
-.isoplan[data-theme='light'] {
+.isoplan:where([data-theme='light']) {
   --iso-bg: #f7fafb;
   --iso-bg-grid: rgba(8, 145, 178, 0.06);
   --iso-border: #d4dde2;

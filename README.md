@@ -140,7 +140,7 @@ Example of a Portuguese copy:
 
 ## Theming
 
-`isoplan/styles.css` defines every color as a CSS custom property on `.isoplan`. The `neon` theme is a near-black blueprint with cyan pieces and purple inner zones; `light` is a pale blueprint. Override any variable:
+`isoplan/styles.css` defines every color as a CSS custom property on `.isoplan`. The `neon` theme is a near-black blueprint with cyan pieces and purple inner zones; `light` is a pale blueprint. Override any variable in a rule loaded after `isoplan/styles.css`:
 
 ```css
 .isoplan {
